@@ -1,0 +1,9 @@
+<div *ngIf="data">
+    <canvas
+    baseChart
+    [data]="lineChartData"
+    [type]="'line'"
+    [options]="lineChartOptions">
+</canvas>
+</div>
+<p *ngIf="!data">Chargement du graphique...</p>

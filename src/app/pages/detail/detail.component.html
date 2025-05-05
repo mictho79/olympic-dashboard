@@ -1,0 +1,24 @@
+<header>
+    <h1>{{nomPays}}</h1>
+    <div class="stats">
+        <div class="statbox">
+            <p>Number of entries</p>
+            <strong>{{numberEntries}}</strong>
+        </div>
+        <div class="statbox">
+            <p>Total number medals </p>
+            <strong>{{numberMedals}}</strong>
+        </div>
+        <div class="statbox">
+            <p>Total number of athletes </p>
+            <strong>{{numberAthlete}}</strong>
+        </div>
+    </div>
+    
+</header>
+<div class="graph">
+<app-linechart [data]="detailOlympic" class="line"></app-linechart>
+</div>
+<button
+(click)="click($event)">RETOUR
+</button>
