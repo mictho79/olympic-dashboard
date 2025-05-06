@@ -1,0 +1,12 @@
+::ng-deep .ngx-charts-tooltip-content {
+    background-color: #23736b !important;
+    text-align: center;
+  }
+  
+  ::ng-deep .ngx-charts-tooltip-content .tooltip-label {
+    font-weight: bold;
+  }
+  
+  ::ng-deep .ngx-charts-tooltip-content .tooltip-val::before {
+    content: '🏅 ';
+  }

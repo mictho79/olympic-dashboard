@@ -1,10 +1,9 @@
 <div *ngIf="data">
-        <canvas baseChart
-          [data]="pieChartData"
-          [type]="pieChartType"
-          [options]="pieChartOptions"
-          (chartClick)="click($event)">
-        </canvas>
-      </div>
-      
+  <ngx-charts-pie-chart
+  [view]="view"
+  [results]="chartData"
+  [labels]="true"
+  (select)="click($event)">
+</ngx-charts-pie-chart>
 <p *ngIf="!data">Chargement du graphique...</p>
+

@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
 
   constructor(private olympicService: OlympicService) {}
 
-  // Lifecycle hook appelé dès que le composant est initialisé
   ngOnInit() {
     this.chargement(); // On charge les données
   }
@@ -33,7 +32,7 @@ export class HomeComponent implements OnInit {
    */
   chargement(): void {
     this.olympics$.subscribe(data => {
-      this.olympic = [...data]; // Clonage du tableau déclenchant bien les bindings / détecteurs de changement
+      this.olympic = [...data]; // Clonage du tableau 
       
       if (this.olympic.length > 0) {
         // On suppose que tous les pays ont participé au même nombre d’éditions
