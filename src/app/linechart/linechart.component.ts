@@ -15,17 +15,17 @@ export class LinechartComponent implements OnChanges {
   @Input() data?: olympic;
 
   public lineChartData: any[] = [];
-
+  // Dimensions du graphique : largeur x hauteur  
   view: [number, number] = [600, 300];
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.data) {
       this.lineChartData = [
         {
-          name: this.data.country,
+          name: this.data.country, // Nom affiché dans la légende
           series: this.data.participations.map(p => ({
-            name: p.year.toString(),
-            value: p.medalsCount
+            name: p.year.toString(), // Année en string pour l'axe X
+            value: p.medalsCount // Nombre de médailles cette année-làz
           }))
         }
       ];
