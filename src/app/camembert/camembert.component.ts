@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { olympic } from '../core/models/Olympic';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { LegendPosition } from '@swimlane/ngx-charts';
 
 @Component({
   selector: 'app-camembert',
@@ -18,8 +17,6 @@ export class CamembertComponent implements OnChanges {
   public chartData: { name: string, value: number }[] = [];
 
   view: [number, number] = [600, 400];
-  legend: boolean = true;
-  legendPosition: LegendPosition = LegendPosition.Below;
 
   constructor(private router: Router) {}
 
@@ -28,19 +25,19 @@ export class CamembertComponent implements OnChanges {
       this.update();
     }
   }
-
+  // Formate les données reçues en entrée pour le camembert
   private update(): void {
     this.chartData = this.data!.map(p => ({
-      name: p.country,
-      value: p.participations.reduce((sum, part) => sum + part.medalsCount, 0)
+      name: p.country,// Le nom du pays sera affiché dans le camembert
+      value: p.participations.reduce((sum, part) => sum + part.medalsCount, 0)// Total des médailles par pays
     }));
   }
 
-  // Clic sur une part du camembert
+   // Gère le clic sur une part du camembert : redirige vers la page de détail du pays
   click(event: any): void {
     const country = event.name;
     if (country) {
-      this.router.navigate(['/detail', country]);
+      this.router.navigate(['/detail', country]);// Redirection avec le nom du pays comme paramètre
     }
   }
 }

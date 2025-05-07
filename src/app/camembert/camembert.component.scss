@@ -1,12 +1,12 @@
 ::ng-deep .ngx-charts-tooltip-content {
-    background-color: #23736b !important;
-    text-align: center;
-  }
-  
-  ::ng-deep .ngx-charts-tooltip-content .tooltip-label {
-    font-weight: bold;
-  }
-  
-  ::ng-deep .ngx-charts-tooltip-content .tooltip-val::before {
-    content: '🏅 ';
-  }
+  background-color: #23736b !important; /* Change la couleur de fond de la tooltip avec une teinte verte personnalisée. L'utilisation de !important force cette règle, même si d'autres styles sont plus spécifiques. */
+  text-align: center; /* Centre le texte dans la tooltip. */
+}
+
+::ng-deep .ngx-charts-tooltip-content .tooltip-label {
+  font-weight: bold; /* Met le label (souvent le nom du pays ou de la catégorie) en gras. */
+}
+
+::ng-deep .ngx-charts-tooltip-content .tooltip-val::before {
+  content: '🏅 '; /* Ajoute un emoji médaille devant la valeur affichée dans la tooltip. */
+}
