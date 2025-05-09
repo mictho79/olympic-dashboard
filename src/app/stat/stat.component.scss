@@ -1,0 +1,26 @@
+.statbox {
+    border: 2px solid #23736b;
+    padding: 5px 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px;
+  
+    h2 {
+      font-size: 18px;
+      font-weight: 200;
+      font-family: 'Inter';
+    }
+  
+    span {
+      font-weight: 700;
+      font-family: 'Inter';
+    }
+    
+    @media (max-width: 720px) {
+      .statbox {
+        width: 90%;
+        max-width: 300px;
+      }
+    }
+
+} 

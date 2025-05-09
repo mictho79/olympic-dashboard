@@ -10,6 +10,7 @@ h1{
     border: 2px;
     border-radius: 10px;
     padding: 10px;
+    font-weight: 200;
 }
 
 .stats{
@@ -18,29 +19,17 @@ h1{
     
 }
 
-.statbox{
-
-    border: 2px solid #23736b;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-
-  }
-
-h2{
-    font-size: 18px;
-    font-weight: 400;
-    font-family: 'Inter';
-}  
-span {
-    font-weight: 700;
-    font-family: 'Inter';
-}
 
 .graph{
     padding-top: 20px;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
 }
 
+
+@media (max-width: 720px) {
+  .stats{
+    flex-direction: column;
+  }
+}
 

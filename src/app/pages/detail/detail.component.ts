@@ -5,11 +5,12 @@ import { olympic } from 'src/app/core/models/Olympic'; // Modèle de données ol
 import { OlympicService } from 'src/app/core/services/olympic.service'; // Service de récupération des données
 import { Router } from '@angular/router';
 import { LinechartComponent } from 'src/app/linechart/linechart.component'; // Import du composant graphique
+import { StatComponent } from 'src/app/stat/stat.component';
 
 @Component({
   selector: 'app-detail',
   standalone: true,
-  imports: [LinechartComponent], // Import du linechart dans ce composant standalone
+  imports: [LinechartComponent,StatComponent], // Import du linechart dans ce composant standalone
   templateUrl: './detail.component.html',
   styleUrl: './detail.component.scss'
 })
@@ -77,7 +78,7 @@ export class DetailComponent implements OnInit {
   }
 
   /**
-   * Méthode appelée par un bouton pour revenir à la page d’accueil
+   * Méthode appelée pour revenir à la page d’accueil
    */
   click(event: any): void {
     this.router.navigate(['/']);

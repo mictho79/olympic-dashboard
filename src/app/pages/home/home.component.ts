@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { olympic } from 'src/app/core/models/Olympic'; // Modèle d’un pays avec ses participations
 import { OlympicService } from 'src/app/core/services/olympic.service'; // Service pour accéder aux données
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

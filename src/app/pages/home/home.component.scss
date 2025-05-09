@@ -10,6 +10,7 @@ h1{
     border: 2px;
     border-radius: 10px;
     padding: 10px;
+    font-weight: 200;
 }
 
 .stats{
@@ -18,23 +19,27 @@ h1{
 
 }
 
-.statbox{
-
+.statbox {
     border: 2px solid #23736b;
-    padding: 0px 20px 0px 20px;
+    padding: 5px 15px;
     border-radius: 10px;
     text-align: center;
-    margin: 0px 30px 0px 30px;
+    margin: 10px;
+  
+    h2 {
+      font-size: 18px;
+      font-weight: 200;
+      font-family: 'Inter';
+    }
+  
+    span {
+      font-weight: 700;
+      font-family: 'Inter';
+    }
+  
   }
 
-p{
-    font-family: 'Inter';
-}  
-
-strong{
-    font-family: 'Inter';
-}  
-.fromage{
+.graph{
     padding-top: 20px;
     display: flex;
     justify-content: center; 

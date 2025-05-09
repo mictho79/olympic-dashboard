@@ -1,19 +1,9 @@
 <header>
     <h1>{{nomPays}}</h1>
     <div class="stats">
-        <div class="statbox">
-            <!-- reutiliser le component-->
-            <h2>Number of entries</h2>
-            <span>{{numberEntries}}</span>
-        </div>
-        <div class="statbox">
-            <h2>Total number medals </h2>
-            <span>{{numberMedals}}</span>
-        </div>
-        <div class="statbox">
-            <h2>Total number of athletes </h2>
-            <span>{{numberAthlete}}</span>
-        </div>
+        <app-stat [label]="'Number of entries'" [value]="numberEntries"></app-stat>
+        <app-stat [label]="'Total number medals'" [value]="numberMedals"></app-stat>
+        <app-stat [label]="'Total number of athletes'" [value]="numberAthlete"></app-stat>
     </div>
     
 </header>
