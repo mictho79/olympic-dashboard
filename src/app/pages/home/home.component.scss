@@ -45,4 +45,15 @@ h1{
     justify-content: center; 
 }
 
+@media (max-width: 720px) {
+  .stats{
+    flex-direction: column;
+     align-items: center;
+  }
+  .statbox {
+    width: 90%;
+    min-width: 230px; 
+    max-width: 230px;
+  }
+}
 

@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { olympic } from '../core/models/Olympic';
@@ -11,14 +11,24 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
   templateUrl: './camembert.component.html',
   styleUrl: './camembert.component.scss'
 })
-export class CamembertComponent implements OnChanges {
+export class CamembertComponent implements OnChanges,OnInit {
   @Input() data?: olympic[];
 
   public chartData: { name: string, value: number }[] = [];
 
-  view: [number, number] = [600, 400];
+  view: [number, number] = [0,0];
 
   constructor(private router: Router) {}
+
+
+   ngOnInit(): void {
+    this.view = this.getSize();
+
+
+    window.addEventListener('resize', () => {
+      this.view = this.getSize();
+    });
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.data) {
@@ -39,5 +49,10 @@ export class CamembertComponent implements OnChanges {
     if (country) {
       this.router.navigate(['/detail', country]);// Redirection avec le nom du pays comme paramètre
     }
+  }
+
+  getSize(): [number, number] {
+    const w = window.innerWidth;
+    return w < 720 ? [380, 280] : [800, 400];
   }
 }

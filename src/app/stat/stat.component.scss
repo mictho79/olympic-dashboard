@@ -16,11 +16,11 @@
       font-family: 'Inter';
     }
     
-    @media (max-width: 720px) {
-      .statbox {
-        width: 90%;
-        max-width: 300px;
-      }
-    }
-
-} 
+}
+@media (max-width: 720px) {
+  .statbox {
+    width: 90%;
+    min-width: 230px; 
+  }
+}
+ 
