@@ -13,7 +13,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 export class LinechartComponent implements OnInit, OnChanges {
   @Input() data?: olympic;
 
-  public lineChartData: any[] = [];
+  public lineChartData: { name: string; series: { name: string; value: number }[] }[] = [];
   public view: [number, number] = [600, 300];
 
   ngOnInit(): void {

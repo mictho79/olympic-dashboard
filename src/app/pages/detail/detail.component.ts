@@ -7,6 +7,10 @@ import { Router } from '@angular/router';
 import { LinechartComponent } from 'src/app/linechart/linechart.component'; // Import du composant graphique
 import { StatComponent } from 'src/app/stat/stat.component';
 
+//rediriger vers dashboard si mauvais url
+//se renseigner sur git pour utiliser les fork / merge request
+
+
 @Component({
   selector: 'app-detail',
   standalone: true,
@@ -50,7 +54,10 @@ export class DetailComponent implements OnInit {
    */
   chargement(): void {
     const pays = this.route.snapshot.paramMap.get('pays'); // ex : 'France'
-    
+    //verification si le pays existe
+
+
+
     // On s’abonne à l’observable qui contient toutes les données olympiques
     this.olympics$.subscribe(data => {
       this.olympic = [...data]; // Clonage du tableau pour déclencher les bindings
@@ -59,6 +66,9 @@ export class DetailComponent implements OnInit {
       this.detailOlympic = this.olympic.find(
         o => o.country === pays
       );
+      if (!this.detailOlympic) {
+      this.router.navigate(['/']); // redirection vers la page d'accueil
+      }
 
       // On extrait les infos du pays
       this.nomPays = this.detailOlympic?.country;

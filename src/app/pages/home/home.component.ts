@@ -18,8 +18,8 @@ export class HomeComponent implements OnInit {
   public olympic: olympic[] = [];
 
   // Variables d’affichage
-  public nombreJO?: number;    // Nombre d’éditions (ex : 10)
-  public nombrePays?: number;  // Nombre de pays dans le tableau (ex : 5)
+  public numberJO?: number;    // Nombre d’éditions (ex : 10)
+  public numberPays?: number;  // Nombre de pays dans le tableau (ex : 5)
 
   constructor(private olympicService: OlympicService) {}
 
@@ -38,10 +38,10 @@ export class HomeComponent implements OnInit {
       if (this.olympic.length > 0) {
         // On suppose que tous les pays ont participé au même nombre d’éditions
         // => on prend la longueur du tableau de participations du premier pays
-        this.nombreJO = this.olympic[0].participations.length;
+        this.numberJO = this.olympic[0].participations.length;
 
         // Nombre total de pays dans le tableau
-        this.nombrePays = this.olympic.length;
+        this.numberPays = this.olympic.length;
       }
     });
   }
